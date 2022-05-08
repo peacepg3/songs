@@ -1,0 +1,7 @@
+<form method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+    <b>are you sure wanna delete this iteam,{{ obj.artists_name }}</b>
+    <input type="submit" value="confirm">
+
+
+</form>

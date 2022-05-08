@@ -1,0 +1,10 @@
+{% extends 'base.html' %}
+{% block body %}
+{{ des.attri1 }}<br>
+{{ des.attri2 }}<br>
+{{ des.attri3 }}<br>
+{{ des.attri9 }}<br>
+<a href="{% url 'updateatt' des.id %}" class="btn btn-warning">update</a>
+<a href="{% url 'delte' des.id %}" class="btn btn-dark">delete</a>
+
+{% endblock %}

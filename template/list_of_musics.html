@@ -1,0 +1,12 @@
+{% extends 'main.html' %}
+{% block content %}
+{% for obj in object_list %}
+<a href="/details/{{ obj.song_id }}"><img src="{{ obj.song_img.url }}" align="middle">About</a> <br>
+<a href="/update/{{ obj.song_id }}" class="btn btn-primary">edit</a>
+<br> <a href="/delete/{{ obj.song_id }}" class="btn btn-danger">Delete</a><br>
+{% empty %}
+do something hi hi
+{% endfor %}
+<br>
+<a href="/">Go Back</a>
+{% endblock %}

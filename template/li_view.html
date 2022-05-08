@@ -1,0 +1,9 @@
+{% for obj in object_list %}
+{{ obj.song_name }}
+{{ obj.artist_name }}
+{{ obj.song_img }}
+{{ obj.description }}
+{{ obj.rate_song }}<br>
+{% empty %}
+myrrr... do somthing
+{% endfor %}

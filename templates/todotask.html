@@ -1,0 +1,63 @@
+
+{% extends 'main.html' %}
+{% block content %}
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="banner">
+                <div class="banner-text">
+                    <h3>BANNER SIDE</h3>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-6">
+            <h6>ACTUAL FORM</h6>
+                  <div class="banner">
+            <div class="shadow card">
+                <div class="card-body">
+                    <form method="post" style="background-color:powderblue">
+                        {% csrf_token %}
+                        <div class="form-group">
+                        <input type="text" name="work" placeholder="YOUR WORK">
+                        </div>
+                        <div class="form-group">
+                        <input type="number" name="time" placeholder="HOURS">
+                        </div>
+                         <div class="form-group">
+                        <input type="date" name="date" placeholder="current date">
+                        </div>
+                        <input type="submit" class="btn btn-success">
+                    </form>
+                </div>
+            </div>
+            </div>
+        </div>
+        <div class="col-md-6">
+        <h6>SUBMITION LIST</h6>
+                    <div class="card-body">
+            <h6>CONTENT INSIDE OF CARD</h6>
+              {% for i in obj %}
+    <div class="row">
+        <div class="col-md-6">
+            <div class="shadow card">
+                <div class="card-body">
+                    <h6>{{ i.work }} , {{ i.time }}</h6>  <br>
+                    <h6><b>{{ i.date }}</b></h6> <br>
+
+                    <a href="{% url 'delt' i.id %}"  class="btn btn-danger">delete</a>
+                    <a href="{% url 'update' i.id %}"  class="btn btn-secondary">update</a>
+
+                </div>
+            </div>
+        </div>
+    </div>
+   {% endfor %}
+        </div>
+    </div>
+    </div>
+</div>
+
+
+{% endblock %}
